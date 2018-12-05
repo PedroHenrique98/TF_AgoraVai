@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class Abastecimento {
-    private int codAutomovel;
+    private String placaAutomovel;
 
     private String tipoCombustivel;
 
@@ -15,19 +15,19 @@ public class Abastecimento {
 
     private double precoTotal;
 
-    public Abastecimento(int auto, String tc, double oa, double l, double pl) {
-        codAutomovel = auto;
-        tipoCombustivel = tc;
-        odometroAtual = oa;
-        litros = l;
-        precoLitro = pl;
+    public Abastecimento(String auto, String tipoc, double odometroa, double lit, double precol) {
+        placaAutomovel = auto;
+        tipoCombustivel = tipoc;
+        odometroAtual = odometroa;
+        litros = lit;
+        precoLitro = precol;
         precoTotal = litros*precoLitro;
         data = LocalDate.now();
     }
 
     @Override
     public String toString() {
-        return "\nCodigo Automóvel: " + codAutomovel + "\nTipo de Combustível: " + tipoCombustivel +"\nData do Abastecimento: " + data.toString() + "\nOdometro Atual"
+        return "\nCodigo Automóvel: " + placaAutomovel + "\nTipo de Combustível: " + tipoCombustivel +"\nData do Abastecimento: " + data.toString() + "\nOdometro Atual"
                 + odometroAtual + "\nLitros Abastecidos: " + litros + "\nPreço por litro: " + precoLitro
                 + "\nPreço Total: " + precoTotal;
     }
