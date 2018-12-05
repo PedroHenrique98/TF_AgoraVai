@@ -8,11 +8,19 @@ public class GerenciadorAbastecimento {
         abastecimentos = new ArrayList<>();
     }
 
-    public void solicitarAbastecimento(Automovel auto, String tc, float l, float pl) {
+    public void solicitarAbastecimento(Automovel auto, String tipoc, double odometroa, double lit, double precol) {
+        Abastecimento ab = new Abastecimento(auto.getPlacaVeiculo(), tipoc, odometroa, lit, precol);
+        abastecimentos.add(ab);
     }
 
     public String toString() {
-        return null;
+        String str = "[";
+        for(Abastecimento abast: abastecimentos) {
+            str = str + abast.toString();
+            str = str + ", ";
+        }
+        str = str.substring(0,str.length()-2);
+        return str + "]";
     }
 
 }
